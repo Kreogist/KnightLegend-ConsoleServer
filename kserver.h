@@ -5,6 +5,7 @@
 #include"QTcpServer"
 #include"QTcpSocket"
 #include"ksocket.h"
+#include"kplayerstatus.h"
 
 #include"QDebug"
 class KServer : public QObject
@@ -14,7 +15,8 @@ public:
     explicit KServer(QObject *parent = 0);
     QTcpSocket pendingSocket;
     QTcpServer KLServer;
-    KSocket socketPool[1000];
+    KSocket *socketPool[1000];
+    kPlayerStatus playerStatus;
     //******************
     int getFreeSocket();
 

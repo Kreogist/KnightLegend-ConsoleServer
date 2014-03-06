@@ -5,13 +5,14 @@
 #include"QTcpSocket"
 #include"QThread"
 #include"kresponder.h"
+#include"kserver.h"
 
 #include"QDebug"
 class KSocket : public QObject
 {
     Q_OBJECT
 public:
-    explicit KSocket(QObject *parent = 0);
+    explicit KSocket(KServer *ser,QObject *parent = 0);
     QTcpSocket *socket;
     QThread resThread;
     KResponder *responder;

@@ -17,9 +17,11 @@ TEMPLATE = app
 SOURCES += main.cpp \
     kserver.cpp \
     ksocket.cpp \
-    kresponder.cpp
+    kresponder.cpp \
+    kplayerstatus.cpp
 
 HEADERS += \
     kserver.h \
     ksocket.h \
-    kresponder.h
+    kresponder.h \
+    kplayerstatus.h

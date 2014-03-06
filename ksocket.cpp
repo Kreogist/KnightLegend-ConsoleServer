@@ -1,11 +1,11 @@
 #include "ksocket.h"
 
-KSocket::KSocket(QObject *parent) :
+KSocket::KSocket(KServer *ser, QObject *parent) :
     QObject(parent)
 {
     freeTag=false;
     //socket=new QTcpSocket(this);
-    responder=new KResponder();
+    responder=new KResponder(ser);
     connect(this,SIGNAL(proccesMsg(QTcpSocket*)),responder,SLOT(analyzeMsg(QTcpSocket*)));
 }
 
